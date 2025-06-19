@@ -7,17 +7,17 @@ import time
 
 # the music player, yes i only imported pygame for this im sorry, also mute music var and other sound vars
 pygame.mixer.init()
-pygame.mixer.music.load("music+sounds/christmas-song.mp3")
+pygame.mixer.music.load("Christmas Game Project/music+sounds/christmas-song.mp3")
 pygame.mixer.music.play(loops=-1)
 pygame.mixer.music.set_volume(1)
 musicstopped = 0
 soundstopped = 0
-button_press = "music+sounds/button_place.wav"
-place_sound = "music+sounds/place_sound.wav"
-remove_all = "music+sounds/remove_all.wav"
-ribbon_place = "music+sounds/ribbon_place.wav"
-remove_sound = "music+sounds/remove_sound.wav"
-explosion_sound = "music+sounds/explosion_sound.wav"
+button_press = "Christmas Game Project/music+sounds/button_place.wav"
+place_sound = "Christmas Game Project/music+sounds/place_sound.wav"
+remove_all = "Christmas Game Project/music+sounds/remove_all.wav"
+ribbon_place = "Christmas Game Project/music+sounds/ribbon_place.wav"
+remove_sound = "Christmas Game Project/music+sounds/remove_sound.wav"
+explosion_sound = "Christmas Game Project/music+sounds/explosion_sound.wav"
 
 # configure root and canvas
 root = Tk()
@@ -494,7 +494,7 @@ def destroy_candle(event):
     winsound.PlaySound(remove_sound, winsound.SND_ASYNC)
     figure_coords = c.bbox('current')
     c.addtag_withtag('delete', 'current')
-    c.addtag_enclosed('delete', figure_coords[0], (figure_coords[1]-15), figure_coords[2], figure_coords[3])
+    c.addtag_enclosed('delete', figure_coords[0], (figure_coords[1]-(15+r)), figure_coords[2], figure_coords[3])
     c.dtag('ornaments', 'delete')
     c.dtag('light', 'delete')
     c.dtag('wired', 'delete')
